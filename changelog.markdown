@@ -20,7 +20,7 @@
 - Version bump package.json and bower.json
 - Updated travis.yml to use a more stable version of Node
 - Updated readme and changelog
-- Version bump for style.scss
+- Version bump for style.less
 
 
 ## [2.8.3] - 2016-03-23

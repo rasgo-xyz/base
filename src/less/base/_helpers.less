@@ -17,15 +17,15 @@
 }
 
 // Font Weights
-.font-100 { font-weight: $font-100; }
-.font-200 { font-weight: $font-200; }
-.font-300 { font-weight: $font-300; }
-.font-400 { font-weight: $font-400; }
-.font-500 { font-weight: $font-500; }
-.font-600 { font-weight: $font-600; }
-.font-700 { font-weight: $font-700; }
-.font-800 { font-weight: $font-800; }
-.font-900 { font-weight: $font-900; }
+.font-100 { font-weight: @font-100; }
+.font-200 { font-weight: @font-200; }
+.font-300 { font-weight: @font-300; }
+.font-400 { font-weight: @font-400; }
+.font-500 { font-weight: @font-500; }
+.font-600 { font-weight: @font-600; }
+.font-700 { font-weight: @font-700; }
+.font-800 { font-weight: @font-800; }
+.font-900 { font-weight: @font-900; }
 
 // Font Styles
 .font-normal { font-style: normal; }
@@ -216,28 +216,28 @@
   select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    height: $base-select-box-height;
+    height: @base-select-box-height;
     width: 100%;
     padding: 0 10px;
     line-height: normal;
-    border: 1px solid $base-input-border-color;
+    border: 1px solid @base-input-border-color;
     background: #fff;
     display: block;
   }
   select::-ms-expand {
     display: none;
   }
-  select:focus { border-color: $base-input-border-color-focus; }
+  select:focus { border-color: @base-input-border-color-focus; }
   select:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $base-input-color;
-    border-color: $base-input-border-color-focus;
+    text-shadow: 0 0 0 @base-input-color;
+    border-color: @base-input-border-color-focus;
   }
 }
 
 // Animations
 .animate {
-  @include animate(1s);
+  .animate(1s);
 }
 .animate-infinite {
   -webkit-animation-iteration-count: infinite;
@@ -245,7 +245,7 @@
 }
 
 // Tablet Helpers
-@include breakpoint(m) {
+.breakpoint(m) {
   
   // General Resets
   .no-float-m { float: none; }
@@ -331,7 +331,7 @@
 }
 
 // Desktop Helpers
-@include breakpoint(l) {
+.breakpoint(l) {
   
   // General Resets
   .no-float-l { float: none; }
@@ -417,7 +417,7 @@
 }
 
 // HD Helpers
-@include breakpoint(xl) {
+.breakpoint(xl) {
 
   // General Resets
   .no-float-xl { float: none; }

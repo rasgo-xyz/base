@@ -13,34 +13,34 @@
   margin-right: -$grid-gutter;
 }
 // Medium Device Row
-@include breakpoint(m) {
+.breakpoint(m) {
   .row-m {
     position: relative;
-    margin-left: -$grid-gutter-m;
-    margin-right: -$grid-gutter-m;
+    margin-left: -@grid-gutter-m;
+    margin-right: -@grid-gutter-m;
   }
 }
 // Large Device Row
-@include breakpoint(l) {
+.breakpoint(l) {
   .row-l {
     position: relative;
-    margin-left: -$grid-gutter-l;
-    margin-right: -$grid-gutter-l;
+    margin-left: -@grid-gutter-l;
+    margin-right: -@grid-gutter-l;
   }
 }
 // Extra Large Device Row
-@include breakpoint(xl) {
+.breakpoint(xl) {
   .row-xl {
     position: relative;
-    margin-left: -$grid-gutter-xl;
-    margin-right: -$grid-gutter-xl;
+    margin-left: -@grid-gutter-xl;
+    margin-right: -@grid-gutter-xl;
   }
 }
 
 // Container
 .container {
-  padding-left: $grid-gutter;
-  padding-right: $grid-gutter;
+  padding-left: @grid-gutter;
+  padding-right: @grid-gutter;
   margin-left: auto;
   margin-right: auto;
 }
@@ -51,19 +51,19 @@
   margin-right: auto;
 }
 // Medium Device Container
-@include breakpoint(m) {
+.breakpoint(m) {
   .container, .container-full {
-    width: $container-m;
+    width: @container-m;
   }
   .container-m {
-    width: $container-m;
-    padding-left: $grid-gutter-m;
-    padding-right: $grid-gutter-m;
+    width: @container-m;
+    padding-left: @grid-gutter-m;
+    padding-right: @grid-gutter-m;
     margin-left: auto;
     margin-right: auto;
   }
   .container-full-m {
-    width: $container-m;
+    width: @container-m;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -71,19 +71,19 @@
   }
 }
 // Large Device Container
-@include breakpoint(l) {
+.breakpoint(l) {
   .container, .container-full {
-    width: $container-l;
+    width: @container-l;
   }
   .container-l {
-    width: $container-l;
-    padding-left: $grid-gutter-l;
-    padding-right: $grid-gutter-l;
+    width: @container-l;
+    padding-left: @grid-gutter-l;
+    padding-right: @grid-gutter-l;
     margin-left: auto;
     margin-right: auto;
   }
   .container-full-l {
-    width: $container-l;
+    width: @container-l;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -91,19 +91,19 @@
   }
 }
 // Extra Large Device Container
-@include breakpoint(xl) {
+.breakpoint(xl) {
   .container, .container-full {
-    width: $container-xl;
+    width: @container-xl;
   }
   .container-xl {
-    width: $container-xl;
-    padding-left: $grid-gutter-xl;
-    padding-right: $grid-gutter-xl;
+    width: @container-xl;
+    padding-left: @grid-gutter-xl;
+    padding-right: @grid-gutter-xl;
     margin-left: auto;
     margin-right: auto;
   }
   .container-full-xl {
-    width: $container-xl;
+    width: @container-xl;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -133,8 +133,8 @@
 .col-2-5,
 .col-3-5,
 .col-4-5 {
-  padding-left: $grid-gutter;
-  padding-right: $grid-gutter;
+  padding-left: @grid-gutter;
+  padding-right: @grid-gutter;
   position: relative;
   float: left;
 }
@@ -173,7 +173,7 @@ $columns: 12;
 
 
 // Medium Device Grid
-@include breakpoint(m) {
+.breakpoint(m) {
   
   // Medium Device Grid Columns - Global Rules
   .col-1-m,
@@ -197,8 +197,8 @@ $columns: 12;
   .col-2-5-m,
   .col-3-5-m,
   .col-4-5-m {
-    padding-left: $grid-gutter-m;
-    padding-right: $grid-gutter-m;
+    padding-left: @grid-gutter-m;
+    padding-right: @grid-gutter-m;
     position: relative;
     float: left;
   }
@@ -238,7 +238,7 @@ $columns: 12;
 }
 
 // Large Device Grid
-@include breakpoint(l) {
+.breakpoint(l) {
   
   // Large Device Grid Columns - Global Rules
   .col-1-l,
@@ -262,8 +262,8 @@ $columns: 12;
   .col-2-5-l,
   .col-3-5-l,
   .col-4-5-l {
-    padding-left: $grid-gutter-l;
-    padding-right: $grid-gutter-l;
+    padding-left: @grid-gutter-l;
+    padding-right: @grid-gutter-l;
     position: relative;
     float: left;
   }
@@ -303,7 +303,7 @@ $columns: 12;
 }
 
 // Extra Large Device Grid
-@include breakpoint(xl) {
+.breakpoint(xl) {
   
   // Extra Large Device Grid Columns - Global Rules
   .col-1-xl,
@@ -327,8 +327,8 @@ $columns: 12;
   .col-2-5-xl,
   .col-3-5-xl,
   .col-4-5-xl {
-    padding-left: $grid-gutter-xl;
-    padding-right: $grid-gutter-xl;
+    padding-left: @grid-gutter-xl;
+    padding-right: @grid-gutter-xl;
     position: relative;
     float: left;
   }

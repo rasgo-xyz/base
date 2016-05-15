@@ -1,0 +1,47 @@
+// ==========================================================================
+// Base – Mixins
+// ==========================================================================
+
+// Breakpoint sizes
+// Example usage @include breakpoint(x) { ... }; - where x is the device
+.breakpoint(@bp) {
+  @media only screen and (min-width: @bp) {
+    .bp-min(@bp, set);
+  }
+}
+
+// Font sizes (primary sizing in `rem` units with a fallback of `px`)
+// Example usage @include font-size(18);
+.font-size (@size) {
+  @remValue: @size / 16;
+  @pxValue: (@size);
+  font-size: @pxValue + px; 
+  font-size: @remValue + rem;
+}
+
+// Line height sizes (primary sizing in `rem` units with a fallback of `px`)
+// Example usage @include line-height(22);
+.line-height (@size) {
+  @remValue: @size / 16;
+  @pxValue: (@size);
+  line-height: @pxValue + px; 
+  line-height: @remValue + rem;
+}
+
+// Background Color with Opacity
+// Example Usage: @include bg-rgba(#111, 50%);
+.background-alpha(@color, @alpha) {
+  @opacity: @alpha / 100%;
+  @rgba: rgba(@color, @opacity);
+  background: @color;
+  background: rgba(@color, @opacity);
+}
+
+// Animations
+// Example Usage .animate(1s);
+.animate(@duration: 1s) {
+  animation-duration: @duration;
+  animation-fill-mode: both;
+}
+
+// Not enough mixins? – Please make some suggestions or contribute more! :)

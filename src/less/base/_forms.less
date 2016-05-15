@@ -24,7 +24,7 @@ input,
 optgroup,
 select,
 textarea {
-  color: $base-input-color;
+  color: @base-input-color;
   font: inherit;
   margin: 0;
 }
@@ -36,17 +36,17 @@ textarea {
 [type="tel"],
 [type="number"],
 [type="date"] {
-  height: $base-input-height;
+  height: @base-input-height;
   padding: 10px;
-  background-color: $base-input-background-color;
-  border: 1px solid $base-input-border-color;
+  background-color: @base-input-background-color;
+  border: 1px solid @base-input-border-color;
   -webkit-appearance: none;
   -moz-appearance: textfield;
   -webkit-border-radius: 0;
   border-radius: 0;
   &:focus {
-    background-color: $base-input-background-color-focus;
-    border-color: $base-input-border-color-focus;
+    background-color: @base-input-background-color-focus;
+    border-color: @base-input-border-color-focus;
     outline: 0;
   }
 }
@@ -79,12 +79,12 @@ textarea {
 // Text Area
 textarea {
   padding: 10px;
-  background-color: $base-input-background-color;
-  border: 1px solid $base-input-border-color;
+  background-color: @base-input-background-color;
+  border: 1px solid @base-input-border-color;
   overflow: auto;
   &:focus {
-    background-color: $base-input-background-color-focus;
-    border-color: $base-input-border-color-focus;
+    background-color: @base-input-background-color-focus;
+    border-color: @base-input-border-color-focus;
     outline: 0;
   }
 }
@@ -92,17 +92,17 @@ textarea {
 // Select
 select {
   text-transform: none;
-  height: $base-input-height;
+  height: @base-input-height;
   padding: 0 10px;
-  background-color: $base-input-background-color;
-  border: 1px solid $base-input-border-color;
+  background-color: @base-input-background-color;
+  border: 1px solid @base-input-border-color;
   &:focus {
-    background-color: $base-input-background-color-focus;
-    border-color: $base-input-border-color-focus;
+    background-color: @base-input-background-color-focus;
+    border-color: @base-input-border-color-focus;
     outline: 0;
   }
 }
-optgroup { font-weight: $font-700; }
+optgroup { font-weight: @font-700; }
 
 // Buttons
 button {
@@ -140,7 +140,7 @@ html input[disabled] {
 
 
 // Placeholder Colour
-::-webkit-input-placeholder { color: $base-input-placeholder-color; }
-:-moz-placeholder { color: $base-input-placeholder-color; }
-::-moz-placeholder { color: $base-input-placeholder-color; }
-:-ms-input-placeholder { color: $base-input-placeholder-color; }
+::-webkit-input-placeholder { color: @base-input-placeholder-color; }
+:-moz-placeholder { color: @base-input-placeholder-color; }
+::-moz-placeholder { color: @base-input-placeholder-color; }
+:-ms-input-placeholder { color: @base-input-placeholder-color; }

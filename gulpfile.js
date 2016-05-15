@@ -1,8 +1,8 @@
 // Base Gulp File
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
+    less = require('gulp-less'),
+    sourcemaps = require('gulp-less-sourcemap'),
     cssBase64 = require('gulp-css-base64'),
     path = require('path'),
     notify = require('gulp-notify'),
@@ -15,46 +15,46 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     runSequence = require('run-sequence');
 
-// Task to compile SCSS
-gulp.task('sass', function () {
-  return gulp.src('./src/scss/styles.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      errLogToConsole: false,
-      paths: [ path.join(__dirname, 'scss', 'includes') ]
+// Task to compile LESS
+gulp.task('less', function () {
+  return gulp.src('./src/less/styles.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ],
+      sourceMap: {
+        sourceMapRootpath: './src/less'
+      }
     })
     .on("error", notify.onError(function(error) {
-      return "Failed to Compile SCSS: " + error.message;
+      return "Failed to Compile LESS: " + error.message;
     })))
     .pipe(cssBase64())
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./src/css/'))
     .pipe(gulp.dest('./dist/css/'))
     .pipe(browserSync.reload({
       stream: true
     }))
-    .pipe(notify("SCSS Compiled Successfully :)"));
+    .pipe(notify("LESS Compiled Successfully :)"));
 });
 
 gulp.task('styleguide', function () {
-  return gulp.src('./src/scss/styleguide.scss')
-  .pipe(sourcemaps.init())
-  .pipe(sass({
-    errLogToConsole: false,
-    paths: [ path.join(__dirname, 'scss', 'includes') ]
+  return gulp.src('./src/less/styleguide.less')
+  .pipe(less({
+    paths: [ path.join(__dirname, 'less', 'includes') ],
+    sourceMap: {
+      sourceMapRootpath: './src/less'
+    }
   })
   .on("error", notify.onError(function(error) {
-    return "Failed to Compile Styleguide SCSS: " + error.message;
+    return "Failed to Compile Styleguide LESS: " + error.message;
   })))
   .pipe(cssBase64())
   .pipe(autoprefixer())
-  .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('./src/css/'))
   .pipe(browserSync.reload({
     stream: true
   }))
-  .pipe(notify("Styleguide SCSS Compiled Successfully :)"));
+  .pipe(notify("Styleguide LESS Compiled Successfully :)"));
 });
 
 // Task to Minify JS
@@ -95,7 +95,7 @@ gulp.task('inlinesource', function () {
 
 // Gulp Watch Task
 gulp.task('watch', ['browserSync'], function () {
-   gulp.watch('./src/scss/**/*', ['sass', 'styleguide']);
+   gulp.watch('./src/less/**/*', ['less', 'styleguide']);
    gulp.watch('./src/**/*.html').on('change', browserSync.reload);
 });
 
@@ -109,5 +109,5 @@ gulp.task('default', ['watch']);
 
 // Gulp Build Task
 gulp.task('build', function() {
-  runSequence('clean', 'sass', 'styleguide', 'imagemin', 'jsmin', 'inlinesource');
+  runSequence('clean', 'less', 'styleguide', 'imagemin', 'jsmin', 'inlinesource');
 });

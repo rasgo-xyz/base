@@ -1,5 +1,5 @@
 {
-  "name": "base",
+  "name": "base-less",
   "version": "3.0.0",
   "homepage": "http://matthewhartman.github.io/base/",
   "authors": [
@@ -9,7 +9,6 @@
   "keywords": [
     "css",
     "less",
-    "scss",
     "framework",
     "mobile-first",
     "lightweight",
