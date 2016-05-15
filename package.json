@@ -1,5 +1,5 @@
 {
-  "name": "getbase",
+  "name": "getbase-less",
   "version": "3.0.0",
   "description": "A Rock Solid, Responsive HTML/CSS Framework built to work on all devices big and small.",
   "homepage": "http://getbase.org/",
@@ -16,7 +16,7 @@
   ],
   "keywords": [
     "css",
-    "scss",
+    "less",
     "framework",
     "mobile-first",
     "lightweight",
@@ -40,8 +40,8 @@
     "gulp-imagemin": "^2.4.0",
     "gulp-inline-source": "^2.1.0",
     "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.3.1",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-less-sourcemap": "^1.4.3",
     "gulp-uglify": "^1.5.3",
     "gulp-watch": "^4.3.5",
     "path": "^0.12.7",
