@@ -2,14 +2,6 @@
 // Base – Mixins
 // ==========================================================================
 
-// Breakpoint sizes
-// Example usage @include breakpoint(x) { ... }; - where x is the device
-.breakpoint(@bp) {
-  @media only screen and (min-width: @bp) {
-    .bp-min(@bp, set);
-  }
-}
-
 // Font sizes (primary sizing in `rem` units with a fallback of `px`)
 // Example usage @include font-size(18);
 .font-size (@size) {

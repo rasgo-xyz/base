@@ -19,6 +19,11 @@ IE8+ and all other modern browsers
 
 * * *
 
+## SCSS Version
+Base has a [SCSS version](https://github.com/matthewhartman/base/)
+
+* * *
+
 ## Looking for old docs?
 - [Base 1 docs](http://getbase.org/v1-docs/)
 - [Base 2 docs](http://getbase.org/v2-docs/)

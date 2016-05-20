@@ -9,11 +9,11 @@
 // Rows
 .row {
   position: relative;
-  margin-left: -$grid-gutter;
-  margin-right: -$grid-gutter;
+  margin-left: -@grid-gutter;
+  margin-right: -@grid-gutter;
 }
 // Medium Device Row
-.breakpoint(m) {
+@media screen only (min-width: @breakpoint-m) {
   .row-m {
     position: relative;
     margin-left: -@grid-gutter-m;
@@ -21,7 +21,7 @@
   }
 }
 // Large Device Row
-.breakpoint(l) {
+@media screen only (min-width: @breakpoint-l) {
   .row-l {
     position: relative;
     margin-left: -@grid-gutter-l;
@@ -29,7 +29,7 @@
   }
 }
 // Extra Large Device Row
-.breakpoint(xl) {
+@media screen only (min-width: @breakpoint-xl) {
   .row-xl {
     position: relative;
     margin-left: -@grid-gutter-xl;
@@ -51,7 +51,7 @@
   margin-right: auto;
 }
 // Medium Device Container
-.breakpoint(m) {
+@media screen only (min-width: @breakpoint-m) {
   .container, .container-full {
     width: @container-m;
   }
@@ -71,7 +71,7 @@
   }
 }
 // Large Device Container
-.breakpoint(l) {
+@media screen only (min-width: @breakpoint-l) {
   .container, .container-full {
     width: @container-l;
   }
@@ -91,7 +91,7 @@
   }
 }
 // Extra Large Device Container
-.breakpoint(xl) {
+@media screen only (min-width: @breakpoint-xl) {
   .container, .container-full {
     width: @container-xl;
   }
@@ -140,10 +140,11 @@
 }
 
 // Mobile-first Grid
-$columns: 12;
-@for $i from 1 through $columns {
-  .col-#{$i} {
-    width: ($i / $columns) * 100%;
+.generate-grid (12);
+.generate-grid (@index) when (@index > 0) {
+  .generate-grid (@index - 1);
+  .col-@{index} {
+    width: @index / 12 * 100%;
   }
 }
 .col-1-2 { width: (6 / 12) * 100%; }
@@ -158,22 +159,26 @@ $columns: 12;
 .col-full { width: 100%; }
 
 // Mobile Push Offsets
-@for $i from 1 through $columns - 1 {
-  .push-#{$i} {
-    left: ($i / $columns) * 100%;
+.generate-push-offsets (11);
+.generate-push-offsets (@index) when (@index > 0) {
+  .generate-push-offsets (@index - 1);
+  .push-@{index} {
+    left: @index / 12 * 100%;
   }
 }
 
 // Mobile Pull Offsets
-@for $i from 1 through $columns - 1 {
-  .pull-#{$i} {
-    left: -($i / $columns) * 100%;
+.generate-pull-offsets (11);
+.generate-pull-offsets (@index) when (@index > 0) {
+  .generate-pull-offsets (@index - 1);
+  .pull-@{index} {
+    left: -@index / 12 * 100%;
   }
 }
 
 
 // Medium Device Grid
-.breakpoint(m) {
+@media screen only (min-width: @breakpoint-m) {
   
   // Medium Device Grid Columns - Global Rules
   .col-1-m,
@@ -204,10 +209,11 @@ $columns: 12;
   }
 
   // Medium Device Grid
-  $columns: 12;
-  @for $i from 1 through $columns {
-    .col-#{$i}-m {
-      width: ($i / $columns) * 100%;
+  .generate-grid-m (12);
+  .generate-grid-m (@index) when (@index > 0) {
+    .generate-grid-m (@index - 1);
+    .col-@{index}-m {
+      width: @index / 12 * 100%;
     }
   }
   .col-1-2-m { width: (6 / 12) * 100%; }
@@ -222,23 +228,27 @@ $columns: 12;
   .col-full-m { width: 100%; }
 
   // Medium Device Push Offsets
-  @for $i from 1 through $columns - 1 {
-    .push-#{$i}-m {
-      left: ($i / $columns) * 100%;
+  .generate-push-offsets-m (11);
+  .generate-push-offsets-m (@index) when (@index > 0) {
+    .generate-push-offsets-m (@index - 1);
+    .push-@{index}-m {
+      left: @index / 12 * 100%;
     }
   }
 
   // Medium Device Pull Offsets
-  @for $i from 1 through $columns - 1 {
-    .pull-#{$i}-m {
-      left: -($i / $columns) * 100%;
+  .generate-pull-offsets-m (11);
+  .generate-pull-offsets-m (@index) when (@index > 0) {
+    .generate-pull-offsets-m (@index - 1);
+    .pull-@{index}-m {
+      left: -@index / 12 * 100%;
     }
   }
 
 }
 
 // Large Device Grid
-.breakpoint(l) {
+@media screen only (min-width: @breakpoint-l) {
   
   // Large Device Grid Columns - Global Rules
   .col-1-l,
@@ -269,10 +279,11 @@ $columns: 12;
   }
 
   // Large Device Grid
-  $columns: 12;
-  @for $i from 1 through $columns {
-    .col-#{$i}-l {
-      width: ($i / $columns) * 100%;
+  .generate-grid-l (12);
+  .generate-grid-l (@index) when (@index > 0) {
+    .generate-grid-l (@index - 1);
+    .col-@{index}-l {
+      width: @index / 12 * 100%;
     }
   }
   .col-1-2-l { width: (6 / 12) * 100%; }
@@ -287,23 +298,27 @@ $columns: 12;
   .col-full-l { width: 100%; }
 
   // Large Device Push Offsets
-  @for $i from 1 through $columns - 1 {
-    .push-#{$i}-l {
-      left: ($i / $columns) * 100%;
+  .generate-push-offsets-l (11);
+  .generate-push-offsets-l (@index) when (@index > 0) {
+    .generate-push-offsets-l (@index - 1);
+    .push-@{index}-l {
+      left: @index / 12 * 100%;
     }
   }
 
   // Large Device Pull Offsets
-  @for $i from 1 through $columns - 1 {
-    .pull-#{$i}-l {
-      left: -($i / $columns) * 100%;
+  .generate-pull-offsets-l (11);
+  .generate-pull-offsets-l (@index) when (@index > 0) {
+    .generate-pull-offsets-l (@index - 1);
+    .pull-@{index}-l {
+      left: -@index / 12 * 100%;
     }
   }
 
 }
 
 // Extra Large Device Grid
-.breakpoint(xl) {
+@media screen only (min-width: @breakpoint-xl) {
   
   // Extra Large Device Grid Columns - Global Rules
   .col-1-xl,
@@ -334,10 +349,11 @@ $columns: 12;
   }
 
   // Extra Large Device Grid
-  $columns: 12;
-  @for $i from 1 through $columns {
-    .col-#{$i}-xl {
-      width: ($i / $columns) * 100%;
+  .generate-grid-xl (12);
+  .generate-grid-xl (@index) when (@index > 0) {
+    .generate-grid-xl (@index - 1);
+    .col-@{index}-xl {
+      width: @index / 12 * 100%;
     }
   }
   .col-1-2-xl { width: (6 / 12) * 100%; }
@@ -352,16 +368,20 @@ $columns: 12;
   .col-full-xl { width: 100%; }
 
   // Extra Large Device Push Offsets
-  @for $i from 1 through $columns - 1 {
-    .push-#{$i}-xl {
-      left: ($i / $columns) * 100%;
+  .generate-push-offsets-xl (11);
+  .generate-push-offsets-xl (@index) when (@index > 0) {
+    .generate-push-offsets-xl (@index - 1);
+    .push-@{index}-xl {
+      left: @index / 12 * 100%;
     }
   }
 
   // Extra Large Device Pull Offsets
-  @for $i from 1 through $columns - 1 {
-    .pull-#{$i}-xl {
-      left: -($i / $columns) * 100%;
+  .generate-pull-offsets-xl (11);
+  .generate-pull-offsets-xl (@index) when (@index > 0) {
+    .generate-pull-offsets-xl (@index - 1);
+    .pull-@{index}-xl {
+      left: -@index / 12 * 100%;
     }
   }
 
