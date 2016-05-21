@@ -13,28 +13,31 @@
   margin-right: -@grid-gutter;
 }
 // Medium Device Row
-@media screen only (min-width: @breakpoint-m) {
+@media only screen and (min-width: @breakpoint-m) {
   .row-m {
     position: relative;
     margin-left: -@grid-gutter-m;
     margin-right: -@grid-gutter-m;
   }
+  .row-m:before, .row-m:after { content: ""; display: table; } .row-m:after { clear: both; }
 }
 // Large Device Row
-@media screen only (min-width: @breakpoint-l) {
+@media only screen and (min-width: @breakpoint-l) {
   .row-l {
     position: relative;
     margin-left: -@grid-gutter-l;
     margin-right: -@grid-gutter-l;
   }
+  .row-l:before, .row-l:after { content: ""; display: table; } .row-l:after { clear: both; }
 }
 // Extra Large Device Row
-@media screen only (min-width: @breakpoint-xl) {
+@media only screen and (min-width: @breakpoint-xl) {
   .row-xl {
     position: relative;
     margin-left: -@grid-gutter-xl;
     margin-right: -@grid-gutter-xl;
   }
+  .row-xl:before, .row-xl:after { content: ""; display: table; } .row-xl:after { clear: both; }
 }
 
 // Container
@@ -51,7 +54,7 @@
   margin-right: auto;
 }
 // Medium Device Container
-@media screen only (min-width: @breakpoint-m) {
+@media only screen and (min-width: @breakpoint-m) {
   .container, .container-full {
     width: @container-m;
   }
@@ -71,7 +74,7 @@
   }
 }
 // Large Device Container
-@media screen only (min-width: @breakpoint-l) {
+@media only screen and (min-width: @breakpoint-l) {
   .container, .container-full {
     width: @container-l;
   }
@@ -91,7 +94,7 @@
   }
 }
 // Extra Large Device Container
-@media screen only (min-width: @breakpoint-xl) {
+@media only screen and (min-width: @breakpoint-xl) {
   .container, .container-full {
     width: @container-xl;
   }
@@ -166,6 +169,15 @@
     left: @index / 12 * 100%;
   }
 }
+.push-1-2 { left: (6 / 12) * 100%; }
+.push-1-3 { left: (4 / 12) * 100%; }
+.push-2-3 { left: (8 / 12) * 100%; }
+.push-1-4 { left: (3 / 12) * 100%; }
+.push-3-4 { left: (9 / 12) * 100%; }
+.push-1-5 { left: (2.4 / 12) * 100%; }
+.push-2-5 { left: (4.8 / 12) * 100%; }
+.push-3-5 { left: (7.2 / 12) * 100%; }
+.push-4-5 { left: (9.6 / 12) * 100%; }
 
 // Mobile Pull Offsets
 .generate-pull-offsets (11);
@@ -175,10 +187,19 @@
     left: -@index / 12 * 100%;
   }
 }
+.pull-1-2 { left: -(6 / 12) * 100%; }
+.pull-1-3 { left: -(4 / 12) * 100%; }
+.pull-2-3 { left: -(8 / 12) * 100%; }
+.pull-1-4 { left: -(3 / 12) * 100%; }
+.pull-3-4 { left: -(9 / 12) * 100%; }
+.pull-1-5 { left: -(2.4 / 12) * 100%; }
+.pull-2-5 { left: -(4.8 / 12) * 100%; }
+.pull-3-5 { left: -(7.2 / 12) * 100%; }
+.pull-4-5 { left: -(9.6 / 12) * 100%; }
 
 
 // Medium Device Grid
-@media screen only (min-width: @breakpoint-m) {
+@media only screen and (min-width: @breakpoint-m) {
   
   // Medium Device Grid Columns - Global Rules
   .col-1-m,
@@ -235,6 +256,15 @@
       left: @index / 12 * 100%;
     }
   }
+  .push-1-2-m { left: (6 / 12) * 100%; }
+  .push-1-3-m { left: (4 / 12) * 100%; }
+  .push-2-3-m { left: (8 / 12) * 100%; }
+  .push-1-4-m { left: (3 / 12) * 100%; }
+  .push-3-4-m { left: (9 / 12) * 100%; }
+  .push-1-5-m { left: (2.4 / 12) * 100%; }
+  .push-2-5-m { left: (4.8 / 12) * 100%; }
+  .push-3-5-m { left: (7.2 / 12) * 100%; }
+  .push-4-5-m { left: (9.6 / 12) * 100%; }
 
   // Medium Device Pull Offsets
   .generate-pull-offsets-m (11);
@@ -244,11 +274,20 @@
       left: -@index / 12 * 100%;
     }
   }
+  .pull-1-2-m { left: -(6 / 12) * 100%; }
+  .pull-1-3-m { left: -(4 / 12) * 100%; }
+  .pull-2-3-m { left: -(8 / 12) * 100%; }
+  .pull-1-4-m { left: -(3 / 12) * 100%; }
+  .pull-3-4-m { left: -(9 / 12) * 100%; }
+  .pull-1-5-m { left: -(2.4 / 12) * 100%; }
+  .pull-2-5-m { left: -(4.8 / 12) * 100%; }
+  .pull-3-5-m { left: -(7.2 / 12) * 100%; }
+  .pull-4-5-m { left: -(9.6 / 12) * 100%; }
 
 }
 
 // Large Device Grid
-@media screen only (min-width: @breakpoint-l) {
+@media only screen and (min-width: @breakpoint-l) {
   
   // Large Device Grid Columns - Global Rules
   .col-1-l,
@@ -305,6 +344,15 @@
       left: @index / 12 * 100%;
     }
   }
+  .push-1-2-l { left: (6 / 12) * 100%; }
+  .push-1-3-l { left: (4 / 12) * 100%; }
+  .push-2-3-l { left: (8 / 12) * 100%; }
+  .push-1-4-l { left: (3 / 12) * 100%; }
+  .push-3-4-l { left: (9 / 12) * 100%; }
+  .push-1-5-l { left: (2.4 / 12) * 100%; }
+  .push-2-5-l { left: (4.8 / 12) * 100%; }
+  .push-3-5-l { left: (7.2 / 12) * 100%; }
+  .push-4-5-l { left: (9.6 / 12) * 100%; }
 
   // Large Device Pull Offsets
   .generate-pull-offsets-l (11);
@@ -314,11 +362,20 @@
       left: -@index / 12 * 100%;
     }
   }
+  .pull-1-2-l { left: -(6 / 12) * 100%; }
+  .pull-1-3-l { left: -(4 / 12) * 100%; }
+  .pull-2-3-l { left: -(8 / 12) * 100%; }
+  .pull-1-4-l { left: -(3 / 12) * 100%; }
+  .pull-3-4-l { left: -(9 / 12) * 100%; }
+  .pull-1-5-l { left: -(2.4 / 12) * 100%; }
+  .pull-2-5-l { left: -(4.8 / 12) * 100%; }
+  .pull-3-5-l { left: -(7.2 / 12) * 100%; }
+  .pull-4-5-l { left: -(9.6 / 12) * 100%; }
 
 }
 
 // Extra Large Device Grid
-@media screen only (min-width: @breakpoint-xl) {
+@media only screen and (min-width: @breakpoint-xl) {
   
   // Extra Large Device Grid Columns - Global Rules
   .col-1-xl,
@@ -375,6 +432,15 @@
       left: @index / 12 * 100%;
     }
   }
+  .push-1-2-xl { left: (6 / 12) * 100%; }
+  .push-1-3-xl { left: (4 / 12) * 100%; }
+  .push-2-3-xl { left: (8 / 12) * 100%; }
+  .push-1-4-xl { left: (3 / 12) * 100%; }
+  .push-3-4-xl { left: (9 / 12) * 100%; }
+  .push-1-5-xl { left: (2.4 / 12) * 100%; }
+  .push-2-5-xl { left: (4.8 / 12) * 100%; }
+  .push-3-5-xl { left: (7.2 / 12) * 100%; }
+  .push-4-5-xl { left: (9.6 / 12) * 100%; }
 
   // Extra Large Device Pull Offsets
   .generate-pull-offsets-xl (11);
@@ -384,5 +450,14 @@
       left: -@index / 12 * 100%;
     }
   }
+  .pull-1-2-xl { left: -(6 / 12) * 100%; }
+  .pull-1-3-xl { left: -(4 / 12) * 100%; }
+  .pull-2-3-xl { left: -(8 / 12) * 100%; }
+  .pull-1-4-xl { left: -(3 / 12) * 100%; }
+  .pull-3-4-xl { left: -(9 / 12) * 100%; }
+  .pull-1-5-xl { left: -(2.4 / 12) * 100%; }
+  .pull-2-5-xl { left: -(4.8 / 12) * 100%; }
+  .pull-3-5-xl { left: -(7.2 / 12) * 100%; }
+  .pull-4-5-xl { left: -(9.6 / 12) * 100%; }
 
 }

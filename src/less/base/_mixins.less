@@ -7,8 +7,8 @@
 .font-size (@size) {
   @remValue: @size / 16;
   @pxValue: (@size);
-  font-size: @pxValue + px; 
-  font-size: @remValue + rem;
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
 }
 
 // Line height sizes (primary sizing in `rem` units with a fallback of `px`)
@@ -16,17 +16,17 @@
 .line-height (@size) {
   @remValue: @size / 16;
   @pxValue: (@size);
-  line-height: @pxValue + px; 
-  line-height: @remValue + rem;
+  line-height: ~"@{pxValue}px"; 
+  line-height: ~"@{remValue}rem";
 }
 
 // Background Color with Opacity
 // Example Usage: @include bg-rgba(#111, 50%);
-.background-alpha(@color, @alpha) {
-  @opacity: @alpha / 100%;
-  @rgba: rgba(@color, @opacity);
-  background: @color;
-  background: rgba(@color, @opacity);
+.background-alpha(@color,@alpha) {
+  @rgba: rgba(red(@color), green(@color), blue(@color), @alpha);
+  @argb: argb(@rgba);
+  background-color: @color;
+  background-color: @rgba;
 }
 
 // Animations
