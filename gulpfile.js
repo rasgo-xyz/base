@@ -37,26 +37,6 @@ gulp.task('less', function () {
     .pipe(notify("LESS Compiled Successfully :)"));
 });
 
-gulp.task('styleguide', function () {
-  return gulp.src('./src/less/styleguide.less')
-  .pipe(less({
-    paths: [ path.join(__dirname, 'less', 'includes') ],
-    sourceMap: {
-      sourceMapRootpath: './src/less'
-    }
-  })
-  .on("error", notify.onError(function(error) {
-    return "Failed to Compile Styleguide LESS: " + error.message;
-  })))
-  .pipe(cssBase64())
-  .pipe(autoprefixer())
-  .pipe(gulp.dest('./src/css/'))
-  .pipe(browserSync.reload({
-    stream: true
-  }))
-  .pipe(notify("Styleguide LESS Compiled Successfully :)"));
-});
-
 // Task to Minify JS
 gulp.task('jsmin', function() {
   return gulp.src('./src/js/**/*.js')
@@ -95,7 +75,7 @@ gulp.task('inlinesource', function () {
 
 // Gulp Watch Task
 gulp.task('watch', ['browserSync'], function () {
-   gulp.watch('./src/less/**/*', ['less', 'styleguide']);
+   gulp.watch('./src/less/**/*', ['less']);
    gulp.watch('./src/**/*.html').on('change', browserSync.reload);
 });
 
@@ -109,5 +89,5 @@ gulp.task('default', ['watch']);
 
 // Gulp Build Task
 gulp.task('build', function() {
-  runSequence('clean', 'less', 'styleguide', 'imagemin', 'jsmin', 'inlinesource');
+  runSequence('clean', 'less', 'imagemin', 'jsmin', 'inlinesource');
 });
