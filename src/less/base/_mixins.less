@@ -30,10 +30,44 @@
 }
 
 // Animations
-// Example Usage .animate(1s);
-.animate(@duration: 1s) {
+// Example Usage .animation(1s);
+.animation(@duration: 1s) {
   animation-duration: @duration;
   animation-fill-mode: both;
 }
 
-// Not enough mixins? – Please make some suggestions or contribute more! :)
+// Arrows
+// Example Usage .arrow(4px, #000, up);
+.arrow(@size: 5px, @color: #333, @direction: right) {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    border: @size solid transparent;
+    z-index: -1;
+    & when (@direction = right) {
+      top: 50%;
+      left: 100%;
+      border-left-color: @color;
+      transform: translate3d(0, -50%, 0);
+    }
+    & when (@direction = left) {
+      top: 50%;
+      left: 0;
+      border-right-color: @color;
+      transform: translate3d(-100%, -50%, 0);
+    }
+    & when (@direction = down) {
+      top: 100%;
+      left: 50%;
+      border-top-color: @color;
+      transform: translate3d(-50%, 0, 0);
+    }
+    & when (@direction = up) {
+      top: 0;
+      left: 50%;
+      border-bottom-color: @color;
+      transform: translate3d(-50%, -100%, 0);
+    }
+  }
+}
