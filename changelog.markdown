@@ -1,6 +1,13 @@
 # Base 2 Change Log
 
 
+## [3.1.5] - 2016-07-02
+### Base V3.1.5
+- Removed rounded corners on buttons and inputs for Safari
+- Fixed IE bug with placeholder color override
+- Version bump for style.scss, package.json and bower.json
+
+
 ## [3.1.3] - 2016-06-18
 ### Base V3.1.3
 - Updated animate mixin to animation
