@@ -1,6 +1,12 @@
 # Base 2 Change Log
 
 
+## [3.2.2] - 2017-02-16
+### Base V3.2.2
+- Fixed broken analytics
+- Version bump for style.scss, package.json and bower.json
+
+
 ## [3.2.1] - 2016-09-10
 ### Base V3.2.1
 - Fixed .container-full for mobile, tablet, desktop and HD devices
