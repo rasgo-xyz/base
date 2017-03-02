@@ -33,6 +33,7 @@
   "devDependencies": {
     "browser-sync": "^2.12.3",
     "del": "^2.2.0",
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.4",
@@ -43,8 +44,10 @@
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.5",
     "path": "^0.12.7",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "vinyl-ftp": "^0.6.0"
   }
 }
