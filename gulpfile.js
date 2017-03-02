@@ -1,6 +1,7 @@
 // Base Gulp File
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
+    gutil = require('gulp-util'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     cssBase64 = require('gulp-css-base64'),
@@ -13,7 +14,10 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     uglify = require('gulp-uglify'),
     autoprefixer = require('gulp-autoprefixer'),
-    runSequence = require('run-sequence');
+    runSequence = require('run-sequence'),
+    ftp = require("vinyl-ftp"),
+    fs = require("fs");
+
 
 // Task to compile SCSS
 gulp.task('sass', function () {
@@ -77,6 +81,7 @@ gulp.task('inlinesource', function () {
 gulp.task('watch', ['browserSync'], function () {
    gulp.watch('./src/scss/**/*', ['sass']);
    gulp.watch('./src/**/*.html').on('change', browserSync.reload);
+   gulp.watch('./src/**/*.js').on('change', browserSync.reload);
 });
 
 // Gulp Clean Up Task
@@ -87,7 +92,30 @@ gulp.task('clean', function() {
 // Gulp Default Task
 gulp.task('default', ['watch']);
 
+gulp.task('move', function() {
+  gulp.src('./src/vendor/**/*').pipe(gulp.dest('dist/vendor'));
+  gulp.src('./src/*.php').pipe(gulp.dest('dist'));
+});
+
+
 // Gulp Build Task
 gulp.task('build', function() {
-  runSequence('clean', 'sass', 'imagemin', 'jsmin', 'inlinesource');
+  runSequence('clean', 'sass', 'imagemin', 'jsmin', 'inlinesource', 'move');
+});
+
+gulp.task("upload", function() {
+
+  var ftp_credentials = JSON.parse(fs.readFileSync("ftp.json"));
+  console.log(ftp_credentials);
+  var conn = ftp.create( {
+    host: ftp_credentials.host,
+    user: ftp_credentials.user,
+    password: ftp_credentials.password,
+    log: gutil.log
+  });
+
+  return gulp.src("dist/**")
+    .pipe(conn.newer("/public_html/testjig.io/"))
+    .pipe(conn.dest("/public_html/testjig.io/"))
+
 });
